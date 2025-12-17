@@ -151,15 +151,21 @@
       /* Floating Social Bar */
     .floating-bar{
       position:fixed;
-      right:20px;
+      left:20px;
       bottom:20px;
-      background:#fff;
-      border-radius:30px;
-      padding:10px 14px;
+      background:#25D366;
+      border-radius:50%;
+      width:56px;
+      height:56px;
       display:flex;
-      gap:12px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.15);
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 6px 20px rgba(0,0,0,0.25);
       z-index:999;
+    }
+    .floating-bar a{
+      color:#fff;
+      font-size:1.8rem;
     }
     .floating-bar a{
       color:var(--primary);
@@ -180,6 +186,24 @@
     @media (max-width:768px){
       .vcard-btn{display:inline-block;}
     }
+      /* Gallery */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+    }
+    .gallery-grid img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+      border-radius:10px;
+      cursor:pointer;
+      transition:transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-grid img:hover{
+      transform:scale(1.04);
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
@@ -188,19 +212,18 @@
   <!-- HERO -->
   <header class="hero">
     <div class="container">
-      <!-- Logo -->
       <div style="margin-bottom:25px;">
         <img src="logo.png" alt="RAKHSA Infra Tech Logo" style="max-width:180px;width:100%;height:auto;" />
       </div>
-      <h1>Reliable IT & Security Solutions in Ajman and Sharjah</h1>
-      <p>CCTV installation, networking, Wi‑Fi setup, used laptops, and fast technical support for homes and small businesses.</p>
+      <h1></h1>
+      <p>Professional IT & Infrastructure Services</p>
       <a class="btn" href="https://wa.me/971568486808" target="_blank">👉 WhatsApp Now for Quick Support</a>
       <a class="vcard-btn" href="rakhsa-infra-tech.vcf" download>📇 Save Contact</a>
       <div class="social-links">
-        <a href="https://www.instagram.com/rakhsa_uae" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/RAKHSAInfraTech" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.tiktok.com/@rakhsa_uae" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://pin.it/3EoV0s6p7" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+        <a href="https://www.instagram.com/rakhsa_uae" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/RAKHSAInfraTech" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@rakhsa_uae" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://pin.it/3EoV0s6p7" target="_blank"><i class="fab fa-pinterest"></i></a>
       </div>
     </div>
   </header>
@@ -208,7 +231,7 @@
   <!-- INTRO -->
   <section class="intro">
     <div class="container">
-      <p>RAKHSA Infra Tech provides practical IT and security solutions with honest pricing and dependable after‑service support. No upselling. No shortcuts.</p>
+      <p>Reliable, practical, and professional IT infrastructure services with honest pricing and dependable after‑service support.</p>
     </div>
   </section>
 
@@ -218,51 +241,60 @@
       <h2>Our Core Services</h2>
       <div class="services">
         <div class="service-box">
-          <h3>CCTV Installation & Maintenance</h3>
-          <p>Indoor and outdoor cameras, DVR/NVR setup, mobile viewing, troubleshooting.</p>
+          <h3><i class="fas fa-video"></i> Security & Access Control Solutions</h3>
+          <p>CCTV installation, configuration & troubleshooting. Video intercom systems, biometric attendance, RFID door access, maglocks, electric locks, and automatic parking gate barriers.</p>
         </div>
         <div class="service-box">
-          <h3>Networking & Wi‑Fi Solutions</h3>
-          <p>Router setup, LAN cabling, office and home Wi‑Fi optimization.</p>
+          <h3><i class="fas fa-network-wired"></i> Networking & Wi-Fi Solutions</h3>
+          <p>Structured LAN cabling, router setup, office & home Wi-Fi design, optimization, and performance troubleshooting.</p>
         </div>
         <div class="service-box">
-          <h3>Used & Refurbished Laptops / PCs</h3>
-          <p>Tested systems for work, study, and office use. Value for money.</p>
+          <h3><i class="fas fa-phone-volume"></i> Communication Systems</h3>
+          <p>IP PBX systems, office extensions, call routing, voicemail & IVR configuration, system migration and support.</p>
         </div>
         <div class="service-box">
-          <h3>IT Support & Troubleshooting</h3>
-          <p>System issues, upgrades, software installation, performance fixes.</p>
+          <h3><i class="fas fa-tools"></i> IT Support & Hardware Services</h3>
+          <p>IT support for homes & small offices, computer diagnostics, repairs, system optimization, used laptops & printers.</p>
         </div>
         <div class="service-box">
-          <h3>Access Control & Biometric Systems</h3>
-          <p>Door access, attendance systems, basic security integration.</p>
+          <h3><i class="fas fa-laptop"></i> Laptop Upgrade Solutions</h3>
+          <p>Performance enhancement, SSD & storage upgrades, battery replacement, and hardware compatibility checks.</p>
         </div>
         <div class="service-box">
-          <h3>Smart Home & Automation (Basic)</h3>
-          <p>Smart locks, simple automation, and control setup.</p>
+          <h3><i class="fas fa-tv"></i> TV & Entertainment Systems</h3>
+          <p>Satellite dish installation, IPTV solutions, multi‑TV setups for homes, shops, and businesses.</p>
+        </div>
+         <div class="service-box">
+          <h3><i class="fas fa-fiber"></i> Optical Fiber Services</h3>
+          <p>Fusion splicing, low-loss fiber termination, ODF & patch panel splicing, backbone and last‑mile fiber works.</p>
         </div>
       </div>
     </div>
   </section>
+  <!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <h2>Our Work Gallery</h2>
+    <p style="text-align:center;max-width:700px;margin:0 auto 30px;">
+      Live project photos synced from Google Drive. New photos appear automatically when you add them to the folder.
+    </p>
 
-  <!-- WHY US -->
-  <section class="why-us">
-    <div class="container">
-      <h2>Why RAKHSA Infra Tech</h2>
-      <ul>
-        <li>Honest pricing. No hidden charges.</li>
-        <li>Fast response and reliable after‑service.</li>
-        <li>Practical solutions based on real needs, not sales targets.</li>
-        <li>Direct technician support, not call‑center talk.</li>
-      </ul>
+    <!-- Google Drive Embedded Gallery -->
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;box-shadow:0 10px 25px rgba(0,0,0,0.15);">
+      <iframe 
+        src="https://drive.google.com/embeddedfolderview?id=1D5_XbajGXgXHId0w_P31sCsTQ4FclDXl#grid" 
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" 
+        loading="lazy">
+      </iframe>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- SERVICE AREA -->
   <section>
     <div class="container area">
       <h2>Service Coverage</h2>
-      <p>Ajman, Sharjah, and nearby UAE locations.<br />On‑site support available for homes, shops, and small offices.</p>
+      <p>📍 Ajman & Sharjah<br />On‑site support for homes, shops, and offices.<br />📞 Call / WhatsApp: +971 56 848 6808</p>
     </div>
   </section>
 
@@ -270,7 +302,7 @@
   <section class="cta">
     <h2>Need IT or Security Work Done Today?</h2>
     <p>Message directly on WhatsApp and explain your issue. You’ll get a clear answer, not a sales script.</p>
-    <a class="btn" href="https://wa.me/971568486808" target="_blank">👉 WhatsApp</a>
+    <a class="btn" href="https://wa.me/971568486808" target="_blank">👉 WhatsApp: +971 56 848 6808</a>
   </section>
 
   <!-- FOOTER -->
@@ -286,11 +318,9 @@
 
   <!-- Floating Social Bar -->
   <div class="floating-bar">
-    <a href="https://wa.me/971568486808" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/rakhsa_uae" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/RAKHSAInfraTech" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.tiktok.com/@rakhsa_uae" target="_blank"><i class="fab fa-tiktok"></i></a>
-    <a href="https://pin.it/3EoV0s6p7" target="_blank"><i class="fab fa-pinterest"></i></a>
+    <a href="https://wa.me/971568486808" target="_blank" aria-label="WhatsApp Chat">
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
 
 </body>
